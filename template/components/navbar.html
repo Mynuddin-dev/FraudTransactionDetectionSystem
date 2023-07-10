@@ -1,0 +1,56 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-light border-bottom shadow" style="background-color: white;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'home' %}">Fraud Transaction Detection</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse d-flex justify-content-end ms-auto" id="navbarSupportedContent">
+      <ul class="navbar-nav me-2 mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#">Hi {{ user.first_name}} {{ user.last_name }}!</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'logout' %}">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- <nav class="navbar navbar-light bg-light px-5">
+  <a class="navbar-brand mr-auto text-bold" href="{% url 'home' %}"
+    >Fraud Transaction Detection</a
+  >
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <p class="nav-link">Hello {{ user.first_name}} {{ user.last_name }}!!
+        </p>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'home' %}">Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'transaction' %}">Transaction</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav> -->

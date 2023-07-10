@@ -1,0 +1,78 @@
+body {
+  background-color: #f0f0f0;
+}
+
+.contents{
+  min-height: 92vh;
+}
+
+#homepage {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media sceen and (min-width: 1200px) {
+  .navbar {
+    height: 8vh;
+  }
+  .contents{
+    min-height: 100vh;
+  }
+}
+
+
+
+/* Login Page */
+.login-container, .signup-container{
+  height: 100vh;
+}
+
+.transaction-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.transaction-form p input{
+  display: flex;
+}
+
+.form-container{
+  text-align: center;
+}
+
+
+.file-input-container {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px 15px 0 15px;
+    margin-bottom: 5px;
+    
+    border: .5px solid rgb(121, 121, 121);
+  }
+
+  .file-input-container input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+  }
+
+  .file-input-container label {
+    display: block;
+    text-align: center;
+  }

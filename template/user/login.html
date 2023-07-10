@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      rel="icon"
+      href="{% static 'image/favicon.png' %}"
+      type="image/gif"
+      sizes="16x16"
+    />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+
+  <body style="background-color: #dadada;">
+    <section class="login-page">
+      <div
+        class="login-container d-flex align-items-center justify-content-center vh-100"
+      >
+        <div class="log-div">
+          <div class="card rounded p-5 shadow bg-white">
+            {% if messages %} {% for message in messages %} {% if message.tags == "error" %}
+            <div class="alert alert-danger">{{ message }}</div>
+            {% else %}
+            <div class="alert alert-success">{{ message }}</div>
+            {% endif %} {% endfor %} {% endif %}
+
+            <form class="login-form" method="POST" style="min-width: 20rem;">
+              <h3 class="text-center mb-3">Login</h3>
+              {% csrf_token %}
+
+              <div class="mb-3">
+                <label for="usernameInput" class="form-label">Username</label>
+                <input type="text" class="form-control" id="usernameInput" name="username">
+              </div>
+              <div class="mb-3">
+                <label for="passwordInput" class="form-label">Password</label>
+                <input type="password" class="form-control" id="passwordInput" name="password">
+              </div>
+              <div class="mb-3 text-center">
+                <button type="submit" class="btn btn-outline-primary">
+                  Log In
+                </button>
+              </div>
+
+              <div class="my-3 text-center">
+                <small class="text-muted">
+                  Do not have an account?
+                  <a href="{% url 'signup' %}" class="ml-1">Sign Up</a>
+                </small>
+              </div>
+              <!-- <fieldset> -->
+                <!-- {{ form.as_p }} -->
+                <!-- {% for field in form.visible_fields %}
+                <div class="form-group">
+                  {{ field.errors }} {{ field.label_tag }} {{ field }}
+                </div>
+                {% endfor %} -->
+
+                <!-- Custom Login Form -->
+
+                <!-- <div class="form-group">
+                  <div class="row input-group mb-2">
+                    <div class="col-md-4">Username:</div>
+                    <div class="col-md-8">
+                      <input type="text" name="username" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="row input-group">
+                    <div class="col-md-4">Password:</div>
+                    <div class="col-md-8">
+                      <input type="password" name="password" />
+                    </div>
+                  </div>
+                </div> -->
+              <!-- </fieldset> -->
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+  </body>
+</html>
